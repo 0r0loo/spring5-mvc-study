@@ -1,0 +1,17 @@
+INDEX VERSION 1.131
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1173120580.index
+\08_SpringMVCXml\src
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3257043192.index
+\01_Test\src
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\461789870.index
+\08_SpringMVCXml\src
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\908962878.index
+\06_ServletMVC\src
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2766489770.index
+\01Test\src
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2778238509.index
+\09_SpringMVCJava\src
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2972364599.index
+\05_Test\src
+C:\Users\thril\Desktop\inflearn\softcampus\spring-mvc\workspace-spring-mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2926312857.index
+\Test\src

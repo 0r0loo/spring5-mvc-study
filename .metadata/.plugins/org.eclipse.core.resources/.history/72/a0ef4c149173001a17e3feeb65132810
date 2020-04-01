@@ -1,0 +1,13 @@
+package com.cho.model;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class Test2Service {
+
+	public int minus(HttpServletRequest request) {
+		String str1 = request.getParameter("data1");
+		String str2 = request.getParameter("data2");
+		
+		return result;
+	}
+}
