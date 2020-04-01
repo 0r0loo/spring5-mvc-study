@@ -36,7 +36,8 @@
 
 ## 동작방식
 
-![동작방식](C:\Users\thril\Desktop\inflearn\스프링mvc주요구성요소및처리흐름.png)
+![스프링mvc주요구성요소및처리흐름](https://user-images.githubusercontent.com/49504411/78194901-4befcd00-74b9-11ea-9dd3-76d0febc7ad0.png)
+
 
 ## DispatcherServlet
 
