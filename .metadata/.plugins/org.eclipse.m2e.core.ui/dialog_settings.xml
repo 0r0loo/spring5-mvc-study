@@ -6,12 +6,34 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="19_RedirectForward"/>
+			<item value="18_FormElement2"/>
+			<item value="17_FormElement1"/>
+			<item value="16_FormCustomTag"/>
+			<item value="15_CommandObject"/>
+			<item value="14_ViewResolver"/>
+			<item value="13_GetParameterObject"/>
+			<item value="12_GetParameter"/>
+			<item value="11_RequestMethod"/>
+			<item value="10_URLMapping"/>
+			<item value="09_SpringMVCJava"/>
 			<item value="08_SpringMVCXml"/>
 			<item value="07_SpringMVCStep1"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="19_RedirectForward"/>
+			<item value="18_FormElement2"/>
+			<item value="17_FormElement1"/>
+			<item value="16_FormCustomTag"/>
+			<item value="15_CommandObject"/>
+			<item value="14_ViewResolver"/>
+			<item value="13_GetParameterObject"/>
+			<item value="12_GetParameter"/>
+			<item value="11_RequestMethod"/>
+			<item value="10_URLMapping"/>
+			<item value="09_SpringMVCJava"/>
 			<item value="08_SpringMVCXml"/>
 			<item value="07_SpringMVCStep1"/>
 		</list>
