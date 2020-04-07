@@ -1,1 +1,1 @@
-{}
+[[{"location":"C:\\Java\\jdk1.8.0_211","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"],[{"location":"C:\\apache-tomcat-8.5.42\\lib\\servlet-api.jar","type":"JAR","hints":{}},"ABSENT"],[{"location":"C:\\Users\\thril\\Desktop\\inflearn\\softcampus\\spring-mvc\\workspace-spring-mvc\\22_SessionScope","type":"PROJECT","hints":{"PROJECT_NAME":"22_SessionScope"}},"22_SessionScope:22_SessionScope:0.0.1"],[{"location":"C:\\apache-tomcat-8.5.42\\lib\\websocket-api.jar","type":"JAR","hints":{}},"ABSENT"]]

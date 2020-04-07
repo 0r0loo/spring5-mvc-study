@@ -37,10 +37,8 @@
 ## 동작방식
 
 ![스프링mvc주요구성요소및처리흐름](https://user-images.githubusercontent.com/49504411/78194901-4befcd00-74b9-11ea-9dd3-76d0febc7ad0.png)
-<<<<<<< HEAD
-=======
 
->>>>>>> cf31b3487455d6407a4a3367ad640d2faa29196c
+
 
 ## DispatcherServlet
 
@@ -369,6 +367,131 @@
 
 
 # 2.스프링 MVC에서의 Bean 관리
+
+## RequestScope
+
+### Request
+
+- 브라우저에 의해 새로운 요청이 발생하면 브라우저는 서버에 요청에 관련된 정보를 전송하게 된다.
+- 이를 받은 서버는 브라우저가 보낸 요청 정보들을 보관하기 위해 HttpServletRequest 객체를 생성해 요청 정보들을 담아 두게 된다.
+- 요청 정보가 담겨 있는 HttpSerlvetRequest 객체는 응답 결과가 브라우저로 전송 될 때까지 유지 되며 사용이 가능하다.
+
+### RequestScope
+
+- 새로운 요청이 발생해 응답결과가 브라우저로 전달 될 때 까지 요청 정보가 담겨 있는 Request 객체를 사용할 수 있다.
+- 이러한 사용 범위를 RequestScope라고 부른다.
+- HttpSerlverRequest 객체에는 서버 개발자가 필요에 의해 데이터나 객체를 저장 할 수 있고 RequestScope 내에서 사용이 가능하다.
+
+## RequestScope 빈 주입
+
+### 빈 주입
+
+- @Autowired를 활용하여 Bean을 자동으로 주입 받을 수 있다.
+- 스프링 코어에는 빈 주입시 prototype과 singleton이 있다.
+- Spring MVC에서는 추가로 request, session, application을 제공하고 있다.
+
+### Request Scope
+
+- Bean을 정의할 때 request scope로 정의하면 요청이 발생할 때 마다 Bean 객체가 생성되어 자동으로 주입된다.
+- 주입된 Bean은 요청 발생시 주입만 이루어지는 것이므로 request 영역에 저장되지는 않는다.
+- Xml로 bean을 설정하고 byName으로 주입 받았을 경우에만 request 영억에 자동으로 저장된다.
+
+### Request Scope
+
+- Java 방식은 @RequestScope를 사용한다.
+- XML 방식은 bean을 정의할 때 scope = "request"로 설정한다.
+
+------
+
+## SessionScope
+
+### Session
+
+- 브라우저가 최초로 서버에 요청을 하게 되면 브라우저당 하나씩 메모리 공간을 서버에서 할당하게 된다.
+- 이 메모리 영역은 브라우저당 하나씩 지정되며 요청이 새롭게 발생하더라도 같은 메모리 공간을 사용하게 된다.
+- 이러한 공간을 session 이라고 부른다.
+- 이 영역은 브라우저를 종료할 때 까지 서버에서 사용할 수 있다.
+
+### SessionScope
+
+- 브라우저가 최초의 요청을 발생 시키고 브라우저를 닫을 때 까지를 SessionScope라고 부른다.
+- SessionScope에서는 session 영역에 저장되어 있는 데이터나 객체를 자유롭게 사용할 수 있다.
+
+### @SessionAttribute
+
+- Session 영역에 저장되어 있는 객체를 사용하고자 할 때 메서드의 매개변수로 @SessionAttribute를 설정하면 Session 영역에 저장되어 있는 Bean을 주입 받을 수 있다.
+
+### @SessionAttributes
+
+- @ModelAttribute를 통해 주입 받는 Bean은 자동으로 Request 영역에 저장되고 Request 영역으로 부터 주입을 받게 된다.
+- 이 때, @ModelAttribute를 통해 주입 받는 Bean을 @SessionAttributes로 지정해 놓으면 request 영역이 아닌 session 영역에 저장되고 session 영역으로 부터 주입 받을 수 있다.
+
+## SessionScope
+
+### Session Scope
+
+- Bean을 정의할 때 session Scope로 정의하면 브라우저가 서버에 최초의 요청을 보낼 때 Bean 객체가 주입된다.
+- 주입된 Bean은 주입만 이루어지는 것이므로 session 영역에 저장되지는 않는다.
+
+### Session Scope
+
+- Java 방식은 @SessionScope를 사용한다.
+- XML 방식은 bean을 정의할 때 scope="session"으로 설정한다.
+
+------
+
+### ApplicationScope
+
+### Application Scope
+
+- 서버가 가동될 때부터 서버가 종료되는 시점까지의 범위를 Application Scope라고 부른다.
+- Application Scope 동안 사용할 수 있는 메모리 영역이 만들어 지며 ServletContext라는 클래스 타입의 객체로 관리한다.
+- ServletContext에 저장된 데이터나 객체는 서버가 종료되기 전까지 서버는 웹브라우저에 관계없이 동일한 메모리 공간을 사용하게 된다.
+
+### ServletContext
+
+- HttpServletRequest 객체로 부터 추출이 가능하다.
+- Controller에서 주입 받을 수 있다.
+
+## Application Scope
+
+- Bean을 정의할 때 application scope로 정의하면 서버가 가동될 때 자동으로 주입된다.
+- 주입된 Bean은 주입만 이루어지는 것이므로 application 영역에 저장되지는 않는다.
+- 서버가 가동될 때 자동으로 주입 되는 것이므로 @Lazy를 설정하지 않아도 된다.
+
+### Application Scope
+
+- Java 방식은 @ApplicationScope를 사용한다.
+- XML 방식은 bean을 정의할 때 scope="application"으로 설정한다.
+
+------
+
+## Cookie
+
+### Cookie
+
+- 사용자 웹 브라우저에 저장되는 데이터이다.
+- 요청일 발생했을 때 웹 브라우저는 쿠키에 저장된 정보를 서버에 전달하게 된다.
+- 만약 응답 결과로 쿠키 정보가 전달되면 웹 브라우저가 쿠키에 저장하게 된다.
+- 쿠키는 사용자 브라우저에 저장되는 것이므로 브라우저가 전달 해 줄 때만 쿠키 정보를 사용할 수 있다.
+
+### Cookie 저장
+
+- 서버측 코드로 쿠키에 데이터를 저장할 수 있는 방법은 없다.
+- 브라우저로 보낼 응답 결과에 저장할 쿠키 정보를 담아 보내면 브라우저에 의해 쿠키가 저장된다.
+- Spring MVC에 쿠키 저장은 Servlet/JSP에서 사용하는 방법으로 처리한다.
+
+### Cookie 읽어오기
+
+- Cookie 정보는 브라우저가 요청을 발생 시켰을 때 요청 정보에 같이 담아서 서버로 전달해 준다.
+- Servlet/JSP에서는 쿠키 정보를 배열로 받아 사용할 수 있다.
+- Spring MVC에서는 쿠키 정보를 주입 받아 사욜할 수 있다.
+
+
+
+------
+
+
 
 # 3.스프링 MVC의 유효성 검사
 

@@ -6,6 +6,10 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="22_SessionScope"/>
+			<item value="21_RequestScopeBeanXml"/>
+			<item value="21_RequestScopeBeanJava"/>
+			<item value="20_RequestScope"/>
 			<item value="19_RedirectForward"/>
 			<item value="18_FormElement2"/>
 			<item value="17_FormElement1"/>
@@ -17,12 +21,14 @@
 			<item value="11_RequestMethod"/>
 			<item value="10_URLMapping"/>
 			<item value="09_SpringMVCJava"/>
-			<item value="08_SpringMVCXml"/>
-			<item value="07_SpringMVCStep1"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="22_SessionScope"/>
+			<item value="21_RequestScopeBeanXml"/>
+			<item value="21_RequestScopeBeanJava"/>
+			<item value="20_RequestScope"/>
 			<item value="19_RedirectForward"/>
 			<item value="18_FormElement2"/>
 			<item value="17_FormElement1"/>
@@ -34,8 +40,6 @@
 			<item value="11_RequestMethod"/>
 			<item value="10_URLMapping"/>
 			<item value="09_SpringMVCJava"/>
-			<item value="08_SpringMVCXml"/>
-			<item value="07_SpringMVCStep1"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>

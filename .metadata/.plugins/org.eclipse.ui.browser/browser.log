@@ -33,3 +33,21 @@
 4월 03, 2020 03:33:58.90 NEW SESSION
 4월 03, 2020 03:33:58.90 
 4월 03, 2020 03:33:58.91 KLIB_SelfTest return : KLR_OK
+
+4월 05, 2020 13:30:31.05 NEW SESSION
+4월 05, 2020 13:30:31.05 
+4월 05, 2020 13:30:31.05 KLIB_SelfTest return : KLR_OK
+4월 05, 2020 13:35:19.17 
+4월 05, 2020 13:35:19.18 KLIB_SelfTest return : KLR_OK
+4월 05, 2020 13:48:37.98 
+4월 05, 2020 13:48:37.99 KLIB_SelfTest return : KLR_OK
+
+4월 06, 2020 08:39:13.71 NEW SESSION
+4월 06, 2020 08:39:13.71 
+4월 06, 2020 08:39:13.74 KLIB_SelfTest return : KLR_OK
+4월 06, 2020 09:57:49.94 [212:14320:0406/095749.943:ERROR:socket_stream.cc(218)] Closing stream with result -2
+4월 07, 2020 07:06:38.94 [212:14376:0407/070638.939:ERROR:get_updates_processor.cc(246)] PostClientToServerMessage() failed during GetUpdates
+4월 07, 2020 07:25:18.69 
+4월 07, 2020 07:25:18.69 KLIB_SelfTest return : KLR_OK
+4월 07, 2020 09:43:33.86 
+4월 07, 2020 09:43:33.87 KLIB_SelfTest return : KLR_OK
