@@ -272,35 +272,35 @@
 - 주로 정보 수정 페이지를 구성할 때 사용한다.
 - 구글검색하면 스프링 공식문서나옴ㅋ
 
-### <form:form 태그
+### <form:form&gt; 태그
 
-- <from 태그를 생성한다.
+- <from&gt; 태그를 생성한다.
 - modelAttribute : form 태그 내의 입력 요소들에 적용될 value 값을 가진 객체 이름 이 속성의 값이 id 속성으로 설정된다. 생략 시 command라는 문자열이 id로 설정된다.
 - action : 요청할 주소를 설정한다. 생략 시 현재 페이지가 설정된다.
 - method : 요청 방식을 설정한다. 생략 시 post로 설정된다.
 
-### <form:button 태그
+### <form:button&gt; 태그
 
 - Submit 버튼을 생성한다.
 - disabled : true를 세팅해주면 버튼을 누룰 수 없도록 비활성화 된다.
 
-### <form:hidden 태그
+### <form:hidden&gt; 태그
 
 - Hidden 타입의 input 태그를 생성한다.
 - path : 설정한 문자열은 id와 name 속성으로 지정되며 model의 값을 추출해 value 속성에 주입한다.
 
-### <form:input 태그
+### <form:input&gt; 태그
 
 - text 타입의 input 태그를 생성한다.
 - path : 설정한 문자열은 id와 name 속성으로 지정되며 model의 값을 추출해 value 속성에 주입한다.
 
-### <form:password 태그
+### <form:password&gt; 태그
 
 - password 타입의 input 태그를 생성한다.
 - path : 설정한 문자열은 id와 name 속성으로 지정되며 model의 값을 추출해 value 속성에 주입한다.
 - showPassword : 세팅될 값의 이름을 지정하더라도 값이 세팅 되지 않는데 이 속성에 true를 넣어주면 값이 세팅된다.
 
-### <form:textarea 태그
+### <form:textarea&gt; 태그
 
 - textarea 타입의 input 태그를 생성한다.
 - path : 설정한 문자열은 id와 name 속성으로 지정되며 model의 값을 추출해 value 속성에 주입한다.
@@ -309,27 +309,27 @@
 
 - Spring에서 제공하는 form custom tag를 이용하면 select, checkbox, radio 등을 유동적으로 생성하여 사용할 수 있다.
 
-### <form:select 
+### <form:select &gt;
 
 - select 태그를 생성한다.
 - path : 설정한 문자열은 id와 name 속성으로 지정되며 model의 값을 추출해 값과 동일한 value 속성의 option 태그를 선택한다.
 
-### <form:option, <form:options
+### <form:option&gt;, <form:options&gt;
 
 - <form:option : select 태그의 option 태그 하나를 생성한다.
 - <from:options : select 태그의 option들을 생성한다.
 - items : option 태그들을 생성할 때 필요한 데이터가 담긴 list나 배열
 
-### <form:checkbox, <formcheckboxs
+### <form:checkbox&gt;, <formcheckboxs&gt;
 
-- <form:checkbox : checkbox 하나를 생성한다.
-- <form:checkboxs : checkbox 들을 생성한다.
+- <form:checkbox&gt; : checkbox 하나를 생성한다.
+- <form:checkboxs&gt; : checkbox 들을 생성한다.
 - items : checkbox들을 생성하기 위해 필요한 정보가 담겨 있는 list나 배열
 
-### <form:radiobutton, <form:radiobuttons
+### <form:radiobutton&gt;, <form:radiobuttons&gt;
 
-- <form:radiobutton : radiobutton 하나를 생성한다.
-- <form:radiobuttons : radiobutton 들을 생성한다.
+- <form:radiobutton&gt; : radiobutton 하나를 생성한다.
+- <form:radiobuttons&gt; : radiobutton 들을 생성한다.
 - items : radiobutton들을 생성하기 위해 필요한 정보가 담겨있는 list나 배열
 
 ------
@@ -494,6 +494,212 @@
 
 
 # 3.스프링 MVC의 유효성 검사
+
+## Properties
+
+### Properties
+
+- 애플리케이션을 개발할 때 프로그램 실행 중 절대 변하지 않는 값을이 있을 수 있다.
+- Spring MVC에서는 이러한 값들을 properties 파일에 작성하고 이를 가져다 사용 할 수 있도록 제공하고 있다.
+
+### @PropertySource, @PropertySources
+
+- 사용할 properties 파일을 지정한다.
+- 하나 혹은 다수의 파일을 지정할 수있다.
+
+### @Value
+
+- properties 파일에 작성한 값을 주입 받을 수 있다.
+
+### Property Editor
+
+- properties 파일에 한글을 작성하면 유니코드 형식의 문자열로 변경된다.
+- 이거 설치하셈
+
+***
+
+## Message
+
+### Properties
+
+- properties를 활용 하면 다양한 값들을 미리 정의 해놓고 이를 가져다 사용할 수 있다.
+- properties에 작성한 값을 JSP에서 사용하고자 한다면 몇 가지 설정이 필요하다.
+
+### Message
+
+- Properties 파일을 Message로 등록하면 이 데이터는 JSP에서도 사용할 수 있다.
+- Properties 파일을 Message로 등록하면 다국어 처리가 가능해진다.
+
+### MessageSource
+
+- MessageSource 객체를 이용해 properties 파일을 등록해주면 Message로 등록할 수 있다
+- 여기에서는 일정 시간마다 한번씩 갱신되는 ReloadbleResourceBundleMessageSource를 사용한다.
+
+### Java에서 사용하기
+
+- Message로 등록된 데이터를 Java 코드에서 사용하고자 한다면 MessageSource를 주입 받아 사용하면 된다.
+- 이 때, Locale을 지정하면 다국어 처리가 가능하다.
+
+### JSP에서 사용하기
+
+- Message로 등록된 데이터를 jSP에서 사용하고자 한다면 message 커스텀 태그를 사용한다.
+
+***
+
+
+
+## 유효성 검사
+
+### 유효성 검사
+
+- 웹 애플리케이션에서 사용자 입력에 대해 유효성을 검사해야 하는 경우가 있다.
+- JavaScript로 처리할 수 도 있지만 Spring MVC를 이용하여 처리할 수도 있다. 난자스가 나은듯...
+
+### JSR-303
+
+- Spring MVC는 JSR-303 규격의 유효성 검사 라이브러리를 사용할 수 있다.
+- Bean에 데이터가 입력될 때 어떤 검사를 할 것인지 어노테이션으로 지정하고 지정된 어노테이션의 조건에 맞지 않으면 개발자에게 입력 값에 오류가 있다는 정보를 전달 한다.
+- 개발자는 이를 통해 유효성 검사를 진행할 수 있다.
+
+### pom.xml
+
+- JSR-303을 사용하려면 라이브러리를 추가해야 한다. JSR-303은 실제 유효성 검사를 할 클래스가 존재해야 하는데 여기서는 hibernate라는 라이브러리를 사용
+
+### Bean에 어노테이션 설정
+
+- 먼저 Bean에 어노테이션을 설정한다. JSR-303과 Hibernate에서는 다양한 어노테이션을 제공한다.
+
+### @Valid
+
+- Controller의 메서드에서 주입 받는 Bean에 @Valid를 설정하면 유효성 검사를 실시한다.
+- 유효성 검사 결과를 사용하고자 한다면 BindingResult 객체를 주입 받아야 한다.
+- 이 객체에는 유효성 검사를 실행한 결과 정보가 담겨있다.
+- 이를 통해 Controller에서 사용자가 입력한 값에 문제가 있는지 파악할 수 있다.
+
+### JSP에서 사용하기
+
+- 만약 JSP에서 잘못 입력한 항목에 대해 메시지를 보여주고 싶다면 errors를 사용하면 된다.
+- Controller에서 주입 받았던 BindingResult 객체는 errors라는 이름으로 request영역에 저장된다. 이를 이용해 메시지를 출력할 수 있다.
+
+***
+
+## 에러 메시지 커스터 마이징
+
+### 에러 메시지
+
+- 유효성 검사에서 오류가 있다고 판단되는 항목에 대해서 JSP에서 메시지를 출력하였다.
+- 우리가 출력하는 메시지는 JSR-303에서 정의한 메시지가 그대로 나오는 것이며 우리가 설정한 문자열은 아니다.
+- JSR-303과 Hibernate에서 제공하는 어노테이션중 일부는 새로운 메시지를 셋팅할 수 있고 일부는 셋팅하지 모한다.
+
+### Properties를 이용한 메시지 설정
+
+- 유효성 검사를 통과하지 못하면 JSP에 오류 관련된 정보가 전달된다.
+- 이 때 codes[0]으로 값을 가져오면 다음 양식으로 문자열을 가져올 수 있다.
+- 에러종류.빈이름.프로퍼티이름
+- 우리가 Properties 파일에 위와 같은 양식의 이름으로 메시지를 등록해주면 properties 파일에 작성한 문자열을 가져와 출력할 수 있고 다국어 처리까지 가능해진다.
+
+### Form 데이터 유지하기
+
+- 유효성 검증에 통과하지 못해 다시 입력화면으로 돌아왔을 때 기존에 입력했던 내용을 유지해야 할 경우가 있다.
+- 이 때 입력 화면으로 전달된 Bean 객체에서 input 태그에 값을 주입하면 된다.
+- 전에 살펴 보았던 Spring MVC의 Form 커스텀 태그를 활용하면 된다.
+- 이 때, 검증 실패 문자열도 손쉽게 셋팅하는 것이 가능하다.
+
+***
+
+
+
+## JSR-303
+
+### JSR-303
+
+- JSR-303 어노테이션은 빈 객체에 주입되는 값의 유효성 검사를 하기 위해 제공되는 어노테이션 이다.
+- ▪https://beanvalidation.org/1.0/spec/
+- @AssertTrue : true가 아닌 값이 들어오면 오류
+- @AsserFalse : false가 아닌 값이 들어오면 오류
+- @Max(값) : 값보다 큰 값이 들어오면 오류
+- @Min(값) : 값보다 작은 값이 들어오면 오류
+- @DecimalMax(value= 값, inclusive = true/false) : 값보다 작거나 같은 값이 들어와야 한다. inclusive가 false면 값은 포함하지 않기 때문에 작은 값이 들어와야 한다. 생략하면 true
+- @DecimalMin(value = 값, inclusive = true/false) : 값보다 크거나 같은 값이 들어와야 한다. Inclusive가 false면 값은 포함하지 않기 때문에 큰 값이 들어와야 한다. 생략하면 false
+- @Nulll : 값이 들어오면 오류가 발생
+- @NotNull : 값이 들어오지 않으면 오류가 발생
+- @Digits(integer = 자릿수, fraction = 자릿수) : 지정된 자릿수의 숫자가 아닐 경우 오류가 발생. Integer-정수 자릿수, fraction - 실수 자릿수
+- @Size(min = 글자수, max = 글자수) : 지정된 글자수 보다 짧거나 길면 오류가 발생
+- @Pattern(regexp=정규식) : 주어진 정규식에 위배되면 오류 발생
+
+***
+
+
+
+## JSR-380
+
+### JSR-380
+
+- JSR-303와 더불어 추가로 JSR-380 규격도 지원한다.
+- 원리는 똑같고 유효성 검사의 편의성을 더하기 위해 추가로 제공되는 부분이다.
+- ▪https://beanvalidation.org/2.0/spec/
+- @NotEmpty : 주입된 값의 길이가 0이면 오류 발생. 공백도 글자로 인식한다.
+- @NotBlank : 주입된 값이 공백을 제거하고 길이가 0이면 오류가 발생.
+- @Positive : 양수가 아니라면 오류 발생.
+- @PositiveOrZero : 0 또는 양수가 아니라면 오류 발생
+- @Negative : 음수가 아니라면 오류 발생
+- @NegativeOrZero : 0 또는 음수가 아니라면 오류 발생.
+- @Email : 이메일 형식이 아니라면 오류 발생. 중간에 @가 있는지 정도만 확인한다.
+
+
+
+***
+
+## Validator
+
+### Validator
+
+- Validator를 직접 만들어 보기
+- JSR-303, JSR-380 스펙으로 유효성 검사를 한 후 추가적으로 다른 유호성 검사를 하고자 할 때 사용한다.
+
+### Validator 인터페이스 구현
+
+- 먼저 Validator 인터페이스를 구현한다.
+- supports : 유효성 검사할 데이터를 가지고  있는 객체가 유효성 검사가 가능한지 확인한다.
+- validate : 유효성 검사를 하는 메서드
+
+### Validator를 컨트롤러에서 등록
+
+- Validator를 컨트롤러에 등록 해준다.
+- 사용할 Validator가 하나면 setValidator, 한개 이상이면 addValidators 메서드를 사용한다.
+
+### ValidateUtils
+
+- 지정된 값에 대해 유효성 검사를 하는 메서드
+- rejectIfEmpty(error 객체, "프로퍼티이름", "코드 이름") : 값이 비어 있는지 확인 한다. 공백은 글자로 취급한다.
+- rejectIfEmptyOrWhitespace(error객체, "프로퍼티이름", "코드이름") : 값이 비어 있거나 공백으로만 구성되어 있는지 확인 한다.
+- 입력값에 문제가 있다면 error 객체에 오류 정보를 저장한다. 사용할 오류 메시지는 "코드이름.bean객체이름.프로퍼티이름" 으로 구성된다.
+
+### rejectValue
+
+- 유효성 조건을 직접 만들어 검사할 때 사용한다.
+- If문으로 유효성 검사를 해주고 위배시 rejectValue를 통해 오류 정보를 지정한다.
+- rejectValue("프로퍼티이름","코드이름")
+- 입력값에 문제가 있다면 error 객체에 오류 정보를 저장한다. 사용할 오류 메시지는 "코드이름.bean객체이름.프로퍼티이름"으로 구성된다.
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------
+
+
 
 # 4.스프링 MVC 인터셉터와 MyBatis
 

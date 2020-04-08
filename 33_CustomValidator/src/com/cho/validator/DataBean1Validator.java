@@ -1,0 +1,40 @@
+package com.cho.validator;
+
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+import com.cho.beans.DataBean1;
+
+public class DataBean1Validator implements Validator{
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		
+		return DataBean1.class.isAssignableFrom(clazz);
+	}
+
+	// 유효성 검사하는 부분
+	@Override
+	public void validate(Object target, Errors errors) {
+		
+		ValidationUtils.rejectIfEmpty(errors, "data2", "error2");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "data3", "error3");
+		
+		DataBean1 bean1 = (DataBean1)target;
+		
+		String data2 = bean1.getData2();
+		String data3 = bean1.getData3();
+		
+		if(data2.length() > 10){
+			errors.rejectValue("data2", "error4");
+		}
+		
+		if(data3.contains("@") == false) {
+			errors.rejectValue("data3", "error5");
+		}
+		
+	}
+
+	
+}
