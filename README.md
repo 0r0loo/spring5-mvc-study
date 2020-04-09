@@ -681,15 +681,6 @@
 - If문으로 유효성 검사를 해주고 위배시 rejectValue를 통해 오류 정보를 지정한다.
 - rejectValue("프로퍼티이름","코드이름")
 - 입력값에 문제가 있다면 error 객체에 오류 정보를 저장한다. 사용할 오류 메시지는 "코드이름.bean객체이름.프로퍼티이름"으로 구성된다.
-- 
-
-
-
-
-
-
-
-
 
 
 
@@ -703,9 +694,169 @@
 
 # 4.스프링 MVC 인터셉터와 MyBatis
 
+## Interceptor
+
+### Interceptor
+
+- AOP를 적용한 Spring MVC의 요소이다.
+- Interceptor는 요청 주소에 대해 관심을 갖고 요청이 발생하게 되면 요청 주소를 확인하여 Controller의 메서드를 호출 하기 전이나 후에 다른 메서드를 호출 할 수 있도록 가로 채가는 개념이다.
+- 요청 발생 시 호출되는 메서드의 코드가 중복 되는 부분이 있을 때 Intercepotr를 통해 처리하게 된다.
+- 로그인 여부 확인, 등급별 서비스 사용 권한 확인 등의 작업을 처리할 때 많이 사용한다.
+- Interceptor는 Java 프로젝트와 XML 프로젝트의 셋팅 방법이 다르다.
+
+### Interceptor 구현
+
+- Interceptor는 HandlerIntercepotr 인터페이스를 구현하거나 HandlerInterceptroAdapter를 상속 받은 클래스를 만들고 다음 메서드를 구현한다.
+- preHandle : Controller의 메서드가 호출되기 전 호출 된다. 이 메서드가 false를 반환하면 코드의 흐름이 중단된다.
+- postHandle : Controller의 메서드의 수행이 완료되고 view 처리를 수행하기 전에 호출 된다.
+- afterCompletion : view 처리까지 완료되고 응답 결과가 브라우저로 전달 되기 전에 호출 된다.
+
+### pattern
+
+- *: 이름 하나를 의미하며 글자수, 글자 등 제한이 없다
+- ?: 글자 하나를 의미한다.
+- ** : 하위 이름까지 포함하여 글자수, 글자 등  제한이 없다.
+
+### Patter 등록
+
+- addPathPatterns, <mapping&gt;:Interceptor가 가로채 갈 주소를 등록한다.
+- excludePathPatterns, <exclude-mapping&gt; : Interceptor가 가로채 가지 않을 주소를 등록한다.
+
+***
+
+## 예외 처리
+
+### 예외 처리
+
+- 프로그램 실행 중 오류가 발생되면 프로그램 실행이 중단 된다.
+- Java에서는 이를 방지하기 위해 오류 처리라는 개념을 두었다.
+- 보통 웹 애플리케이션에서 오류가 발생하면 웹브라우저에 오류 메시지가 나타나는데 이는 사용자 입장에서 매우 보기 좋지 않다.
+- 보통 오류 발생시 보여줄 jsp를 구성하고 오류 발생 시 이 jsp로 응답 결과를 생성하여 브라우저로 전달한다.
+
+### @ExceptionHnadler
+
+- Controller에서 @ExceptionHandler를 통해 메서드를 정의해 주면 오류 발생 시 이 메서드를 자동으로 호출 해준다.
+- 이 메서드가 반환하는 JSP 정보를 통해 응답 결과 화면을 만들고 이 응답결과를 브라우저로 전달하게 된다.
+- 이 때 사용하는 JSP를 오류 페이지용으로 만들어 주면 된다.
+
+### Global Exception Handler
+
+- @ExceptionHandler는 Controller 마다 만들어 줘야 한다.
+- 만약 Controller 마다 발생 가능한 예외들이 있다면 한 번만 정의해서 사용하는 것이 효율적이다.
+- Global Exception Handler를 구현하면 Controller에 정의한 ExceptionHandler중 에 해당 오류에 대한 것이 없다면 Global Exception Handler로 이동하여 예외에 관련된 처리를 해주게 된다.
+
+***
+
+## MyBatis Java
+
+### MyBatis
+
+- Java 언어를 이용하여 데이터 베이스와 연동하는 프로그램을 만들 수 있는 기술을 JDBC라고 부른다
+- MyBatis는 JDBC 프로그래밍을 보다 쉽게 하기 위해 설계된 라이브러리 이다.
+- MyBatis는 Spring Framework에서 이용할 수 있도록 라이브러리를 제공하고 있다.
+
+### 라이브러리 추가
+
+- 데이터베이스 드라이버.jar
+- spring jdbc
+- dbcp
+- mybats
+- mybatis-spring
+
+### Properties 파일 작성하기
+
+- 데이터 베이스 접속 정보를 가지고 있는 properties 파일을 작서 해야함
+
+```
+oracle.jdbc.OracleDriver
+jdbc:oracle:thin:@localhost:1521:xe
+디비이름
+비번
+```
 
 
 
+### Mapper 만들기
+
+- Mapper는 쿼리문을 작성하는 파일이다
+
+### BasicDataSource Bean 정의
+
+- BasicDataSource는 접속 정보를 관리하는 객체이다.
+
+### SqlSessionFactory Bean 정의
+
+- 접속, 쿼리 관리 등을 하는 객체이다.
+
+### Mapper Bean 정의
+
+- 쿼리문을 관리하는 Mapper를 정의한다. 이 Mapper를 주입 받아 쿼리를 실행하게 된다.
+
+### Mapper 주입
+
+- 쿼리를 동작 시켜야 하는 곳에서 Mapper를 주입 받는다.
+
+### 쿼리 실행
+
+- 필요한 쿼리를 Mapper를 통해 실행 한다.
+
+***
+
+
+
+## MyBatis XML
+
+### properties 파일 작성까지는 똑같음
+
+### Mapper 만들기
+
+- xml파일로 만듬
+- 쿼리문을 작성하는 파일
+
+### PropertyPlaceholderConfigurer Bean 정의
+
+- properties 파일에 작성한 데이터를 XML에서 사용할 수 있도록 Bean을 정의
+
+### BasicDataSource Bean 정의
+
+- BasicDataSource는 접속 정보를 관리하는 객체이다.
+
+### SqlSessionFactory Bean 정의
+
+- 접속, 쿼리 관리 등을 하는 객체이다.
+
+### SqlSessionTemplate 정의
+
+- 쿼리문을 전달하는 Bean 이다.
+- 이 Bean을 주입 받아 필요한 쿼리를 실행하게된다.
+
+### SqlSessionTemplate 주입
+
+- 쿼리를 동작 시켜야 하는 곳에서 SqlSessionTemplate을 주입 받는다
+
+### 쿼리 실행
+
+- 필요한 쿼리를 SqlSessionTemplate을 통해 실행 한다.
+
+
+
+***
+
+
+
+## RestController
+
+### Restful API
+
+- 기본 웹 애플리케이션은 응답 결과를 브라우저가 사용하는 코드인 HTML, CSS, JavaScript로 생성하여 전달 한다.
+- 이 데이터들은 브라우저가 화면을 구성하고 꾸미며 기능 수행을 위한 코드들 이다.
+- Restful API 서버는 응답 결과를 데이터만으로 구성하여 클라이언트로 전달하는 서버를 의미한다.
+- Restful API 서버는 웹, 모바일 PC등 다양한 플랫폼으로 데이터를 전달할 때 사용한다.
+
+### @RestController
+
+- Spring MVC에서 Controller를 구성할 때 @Controller를 사용하면 return 하는 값은 사용할 JSP를 지정하게 된다,
+- @RestController를 통해 return하게 되면 그 값 차레를 브라우저로 전달하는 응답결과로 생성해서 보낸다.
 
 
 

@@ -1,0 +1,8 @@
+create table spring_mvc_table(
+	data1 varchar2(100) not null,
+	data2 varchar2(100) not null,
+	data3 varchar2(100) not null
+);
+
+SELECT *
+	FROM SPRING_MVC_TABLE;
