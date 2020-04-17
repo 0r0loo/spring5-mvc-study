@@ -6,6 +6,11 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="practice"/>
+			<item value="40_MiniProjectXML"/>
+			<item value="40_MiniProjectJava"/>
+			<item value="40_MiniProjectHTML"/>
+			<item value="39_MVCProject"/>
 			<item value="38_RestfulAPI"/>
 			<item value="37_MyBatisXML"/>
 			<item value="36_MyBatisJava"/>
@@ -16,15 +21,15 @@
 			<item value="32_JSR-380"/>
 			<item value="31_JSR-303"/>
 			<item value="30_ValidationMessage"/>
-			<item value="29_Validate"/>
-			<item value="28_MessageXML"/>
-			<item value="28_MessageJava"/>
-			<item value="27_Properties"/>
-			<item value="26_Cookie"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="practice"/>
+			<item value="40_MiniProjectXML"/>
+			<item value="40_MiniProjectJava"/>
+			<item value="40_MiniProjectHTML"/>
+			<item value="39_MVCProject"/>
 			<item value="38_RestfulAPI"/>
 			<item value="37_MyBatisXML"/>
 			<item value="36_MyBatisJava"/>
@@ -35,11 +40,6 @@
 			<item value="32_JSR-380"/>
 			<item value="31_JSR-303"/>
 			<item value="30_ValidationMessage"/>
-			<item value="29_Validate"/>
-			<item value="28_MessageXML"/>
-			<item value="28_MessageJava"/>
-			<item value="27_Properties"/>
-			<item value="26_Cookie"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>

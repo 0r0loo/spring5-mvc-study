@@ -67,3 +67,46 @@
 4월 08, 2020 19:38:39.45 KLIB_SelfTest return : KLR_OK
 4월 08, 2020 19:44:37.01 
 4월 08, 2020 19:44:37.02 KLIB_SelfTest return : KLR_OK
+
+4월 09, 2020 15:54:08.70 NEW SESSION
+4월 09, 2020 15:54:08.70 
+4월 09, 2020 15:54:08.71 KLIB_SelfTest return : KLR_OK
+4월 09, 2020 16:38:25.11 
+4월 09, 2020 16:38:25.12 KLIB_SelfTest return : KLR_OK
+
+4월 09, 2020 19:53:34.10 NEW SESSION
+4월 09, 2020 19:53:34.10 
+4월 09, 2020 19:53:34.11 KLIB_SelfTest return : KLR_OK
+4월 09, 2020 21:08:43.04 [2952:13176:0409/210843.048:ERROR:socket_stream.cc(218)] Closing stream with result -2
+4월 09, 2020 21:31:11.53 [2952:13176:0409/213111.534:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+
+4월 10, 2020 10:10:08.67 NEW SESSION
+4월 10, 2020 10:10:08.67 
+4월 10, 2020 10:10:08.68 KLIB_SelfTest return : KLR_OK
+
+4월 11, 2020 07:21:24.65 NEW SESSION
+4월 11, 2020 07:21:24.65 
+4월 11, 2020 07:21:24.66 KLIB_SelfTest return : KLR_OK
+4월 11, 2020 12:38:54.38 
+4월 11, 2020 12:38:54.39 KLIB_SelfTest return : KLR_OK
+
+4월 13, 2020 11:01:51.14 NEW SESSION
+4월 13, 2020 11:01:51.14 
+4월 13, 2020 11:01:51.15 KLIB_SelfTest return : KLR_OK
+4월 13, 2020 12:24:27.39 
+4월 13, 2020 12:24:27.40 KLIB_SelfTest return : KLR_OK
+4월 13, 2020 17:26:49.44 
+4월 13, 2020 17:26:49.46 KLIB_SelfTest return : KLR_OK
+
+4월 14, 2020 10:53:57.04 NEW SESSION
+4월 14, 2020 10:53:57.04 [6196:13200:0414/105357.025:ERROR:CONSOLE(764)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.google.com') does not match the recipient window's origin ('chrome-search://local-ntp').", source: chrome-search://most-visited/single.js (764)
+4월 14, 2020 12:46:31.09 [6196:1896:0414/124631.084:ERROR:socket_stream.cc(218)] Closing stream with result -2
+4월 14, 2020 13:33:54.55 [6196:13200:0414/133354.556:ERROR:gcm_channel_status_request.cc(145)] GCM channel request failed.
+4월 14, 2020 13:33:55.59 [6196:1896:0414/133355.598:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+4월 14, 2020 18:47:31.08 
+4월 14, 2020 18:47:31.11 KLIB_SelfTest return : KLR_OK
+4월 14, 2020 21:07:51.96 [9820:14896:0414/210751.962:ERROR:socket_stream.cc(218)] Closing stream with result -2
+4월 14, 2020 21:22:58.51 [9820:4040:0414/212258.114:ERROR:gcm_channel_status_request.cc(145)] GCM channel request failed.
+4월 14, 2020 21:22:58.55 [9820:14896:0414/212258.491:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+4월 14, 2020 22:24:35.22 
+4월 14, 2020 22:24:35.23 KLIB_SelfTest return : KLR_OK
